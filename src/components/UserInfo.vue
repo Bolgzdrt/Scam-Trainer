@@ -1,6 +1,6 @@
 <template>
     <div class="userIcon">
-        <img src="./iconmonstr-idea-12-24.png" alt="user icon">
+        <img src="../assets/iconmonstr-user-1-32.png" alt="user icon">
     </div>
 </template>
 
@@ -18,9 +18,9 @@ export default {
         padding: 5px 9px;
         border-radius: 50%;
         cursor: pointer;
-        position: sticky;
         float: right;
-        right:2px;
-        top: 2px;
+        right: 20px;
+        top: 20px;
+        position: absolute;
     }
 </style>

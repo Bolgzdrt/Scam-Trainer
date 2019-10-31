@@ -2,18 +2,25 @@
   <div id="app">
     <Header />
     <UserInfo />
+      <span >
+        <Examples />
+        <Examples />
+        <Examples />
+      </span>
   </div>
 </template>
 
 <script>
 import Header from './components/layout/Header'
-import UserInfo from './components/layout/UserInfo'
+import UserInfo from './components/UserInfo'
+import Examples from './components/Examples'
 
 export default {
   name: 'app',
   components: {
     Header,
-    UserInfo
+    UserInfo,
+    Examples
   },
   data() {
     return {
@@ -57,6 +64,7 @@ export default {
   body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.4;
+    background: lightsteelblue
   }
 
   .btn {
@@ -70,5 +78,13 @@ export default {
 
   .btn:hover {
     background: #666;
+  }
+
+  span {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 10px;
   }
 </style>
