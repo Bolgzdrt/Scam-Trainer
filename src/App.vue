@@ -1,22 +1,19 @@
 <template>
   <div id="app">
     <Header />
-    <AddTodo v-on:add-todo="addTodo" />
-    <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo" />
+    <UserInfo />
   </div>
 </template>
 
 <script>
 import Header from './components/layout/Header'
-import Todos from './components/Todos';
-import AddTodo from './components/AddTodo';
+import UserInfo from './components/layout/UserInfo'
 
 export default {
   name: 'app',
   components: {
     Header,
-    Todos,
-    AddTodo
+    UserInfo
   },
   data() {
     return {

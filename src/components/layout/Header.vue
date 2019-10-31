@@ -1,6 +1,7 @@
 <template>
     <header class="header">
-        <h1>TodoList</h1>
+        <h1>Scam Trainer</h1>
+        <h3>"How many times do we have to teach you this lesson, old man?!"</h3>
     </header>
 </template>
 
@@ -21,5 +22,9 @@ export default {
         color: #fff;
         padding-right: 5px;
         text-decoration: none;
+    }
+    h3 {
+        font-style: italic;
+        color:silver;
     }
 </style>
