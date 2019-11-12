@@ -1,56 +1,59 @@
 <template>
   <div id="app">
     <Header />
-    <UserInfo />
-      <span >
-        <Examples />
-        <Examples />
-        <Examples />
-      </span>
+    <span style="padding-top: 100px">
+      <Examples />
+      <Examples />
+      <Examples />
+    </span>
+    <span >
+      <Examples />
+      <Examples />
+      <Examples />
+    </span>
+    <Sidebar />
+    <button
+      type="button"
+      class="btn"
+      @click="showModal"
+    >
+      Open Modal!
+    </button>
+
+    <ExampleItem
+      v-show="isModalVisible"
+      @close="closeModal"
+    />
   </div>
 </template>
 
 <script>
 import Header from './components/layout/Header'
-import UserInfo from './components/UserInfo'
 import Examples from './components/Examples'
+import Sidebar from './components/layout/Sidebar'
+import ExampleItem from './components/ExampleItem'
 
 export default {
   name: 'app',
   components: {
     Header,
-    UserInfo,
-    Examples
+    Examples,
+    Sidebar,
+    ExampleItem
   },
   data() {
     return {
-      todos: [
-        {
-          id: 1,
-          title: "Todo One",
-          completed: false
-        },
-        {
-          id: 2,
-          title: "Todo Two",
-          completed: true
-        },
-        {
-          id: 3,
-          title: "Todo Three",
-          completed: false
-        }
-      ]
-    }
+      isModalVisible: false,
+    };
   },
   methods: {
-    deleteTodo(id) {
-      this.todos = this.todos.filter(todo => todo.id !== id);
-    },
-    addTodo(newTodo) {
-      this.todos = [...this.todos, newTodo];
-    }
-  }
+      showModal() {
+        this.isModalVisible = true;
+      },
+      closeModal() {
+        this.isModalVisible = false;
+      }
+  },
 }
 </script>
 
@@ -64,7 +67,8 @@ export default {
   body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.4;
-    background: lightsteelblue
+    background: #acb9e8;
+    font-size: 16px;
   }
 
   .btn {
@@ -77,7 +81,7 @@ export default {
   }
 
   .btn:hover {
-    background: #666;
+    background: #2c2c2c;
   }
 
   span {
@@ -85,6 +89,6 @@ export default {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    padding-top: 10px;
+    padding: 10px 10px 10px 10px;
   }
 </style>
