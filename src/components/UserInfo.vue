@@ -35,8 +35,8 @@ export default {
         border-radius: 50%;
         cursor: pointer;
         float: right;
-        right: 20px;
-        top: 20px;
+        right: 30px;
+        top: 45px;
         position: absolute;
     }
 
