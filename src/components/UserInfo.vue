@@ -5,6 +5,7 @@
                 <img src="../assets/iconmonstr-user-1-32.png" alt="user icon">
             </button>
         </slot>
+        <div>User Info</div>
     </div>
 </template>
 
@@ -34,10 +35,6 @@ export default {
         padding: 5px 9px;
         border-radius: 50%;
         cursor: pointer;
-        float: right;
-        right: 30px;
-        top: 45px;
-        position: absolute;
     }
 
     .hidden {
@@ -51,5 +48,12 @@ export default {
     /* remove blue outline */
     button:focus {
         outline: 0;
+    }
+
+    #userIcon {
+        float: right;
+        right: 30px;
+        top: 45px;
+        position: absolute;
     }
 </style>

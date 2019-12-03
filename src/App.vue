@@ -53,7 +53,7 @@ export default {
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.4;
-  background: #acb9e8;
+  background: #e27a7a;
   font-size: 20px !important;
 }
 
