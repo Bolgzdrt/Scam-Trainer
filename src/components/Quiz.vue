@@ -1,8 +1,8 @@
 <template>
-  <transition name="modal-fade">
-    <div class="modal-backdrop">
-      <div class="modal">
-        <header class="modal-header">
+  <transition name="modal2-fade">
+    <div class="modal2-backdrop">
+      <div class="modal2">
+        <header class="modal2-header">
           <slot name="header">
             <button type="button" class="btn-close" @click="close">
               <img
@@ -11,61 +11,61 @@
                 alt="right arrow icon"
               />
             </button>
-            <div class="header-title">Example Title</div>
+            <div class="header-title">Example Quiz</div>
           </slot>
         </header>
-        <section class="modal-body">
+        <section class="modal2-body">
           <slot name="body">
-            <img
-              src="../assets/image-placeholder.jpg"
-              class="example-item-image"
-              alt="Example Image"
-            />
-            <div
-              class="example-explanation"
-            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+            <form class="form-quiz" action>
+              Question 1
+              <br />
+              <input class="option" type="radio" name="1" value="1" /> Answer
+              <br />
+              <input class="option" type="radio" name="1" value="2" /> Answer
+              <br />
+              <input class="option" type="radio" name="1" value="3" /> Answer
+              <br />
+              <br />Question 2
+              <br />
+              <input class="option" type="radio" name="2" value="1" /> Answer
+              <br />
+              <input class="option" type="radio" name="2" value="2" /> Answer
+              <br />
+              <input class="option" type="radio" name="2" value="3" /> Answer
+              <br />
+              <br />Question 3
+              <br />
+              <input class="option" type="radio" name="3" value="1" /> Answer
+              <br />
+              <input class="option" type="radio" name="3" value="2" /> Answer
+              <br />
+              <input class="option" type="radio" name="3" value="3" /> Answer
+            </form>
           </slot>
         </section>
-        <footer class="modal-footer">
+        <footer class="modal2-footer">
           <slot name="footer">
-            <button type="button" class="btn-green" @click="showModal2">Quiz</button>
+            <button type="button" class="btn-green" @click="close">Submit</button>
           </slot>
         </footer>
       </div>
-      <Quiz v-show="isModal2Visible" @close="closeModal2" />
     </div>
   </transition>
 </template>
 
 <script>
-import Quiz from "./Quiz";
-
 export default {
-  name: "ExampleItem",
-  components: {
-    Quiz
-  },
-  data() {
-    return {
-      isModal2Visible: false
-    };
-  },
+  name: "Quiz",
   methods: {
     close() {
       this.$emit("close");
-    },
-    showModal2() {
-      this.isModal2Visible = true;
-    },
-    closeModal2() {
-      this.isModal2Visible = false;
     }
   }
 };
 </script>
 
 <style>
-.modal-backdrop {
+.modal2-backdrop {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -77,7 +77,7 @@ export default {
   align-items: center;
 }
 
-.modal {
+.modal2 {
   background: #ffffff;
   box-shadow: 2px 2px 20px 1px;
   overflow-x: auto;
@@ -89,33 +89,33 @@ export default {
   height: 750px;
 }
 
-.modal-header {
+.modal2-header {
   padding: 15px;
   display: flex;
 }
 
-.modal-footer {
+.modal2-footer {
   padding: 15px;
   display: flex;
 }
 
-.modal-header {
+.modal2-header {
   border-bottom: 1px solid #eeeeee;
   justify-content: flex-start;
 }
 
-.modal-footer {
+.modal2-footer {
   border-top: 1px solid #eeeeee;
   justify-content: flex-end;
 }
 
-.modal-body {
+.modal2-body {
   position: relative;
   padding: 20px 10px;
+  height: 600px;
 }
 
-.example-explanation {
-  padding-top: 20px;
+.form-quiz {
   padding-right: 10px;
   padding-left: 10px;
 }
@@ -137,21 +137,14 @@ export default {
   cursor: pointer;
 }
 
-.modal-fade-enter,
-.modal-fade-leave-active {
+.modal2-fade-enter,
+.modal2-fade-leave-active {
   opacity: 0;
 }
 
-.modal-fade-enter-active,
-.modal-fade-leave-active {
+.modal2-fade-enter-active,
+.modal2-fade-leave-active {
   transition: opacity 0.5s ease;
-}
-
-.example-item-image {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 5px;
 }
 
 .close-icon {
@@ -165,5 +158,9 @@ export default {
 .header-title {
   padding-left: 15px;
   padding-top: 3px;
+}
+
+.option {
+  margin-left: 20px;
 }
 </style>
